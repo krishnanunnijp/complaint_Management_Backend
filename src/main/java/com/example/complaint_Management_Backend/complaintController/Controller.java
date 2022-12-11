@@ -39,4 +39,10 @@ public class Controller {
         }
         return map;
     }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/profile",consumes = "application/json",produces = "application/json")
+    public List<User> profile(@RequestBody User user){
+        return dao.profileUsers(user.getId());
+    }
 }
